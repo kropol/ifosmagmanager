@@ -270,8 +270,8 @@ class page{
     }
 
     public function comtehloadheaders(){/// todo модификация под другой магазин
-        $x=new cComteh("http://comteh.com/products/show/c/11217/sc/KT08158.html",array(614));//ноуты
-//        $x=new cComteh("http://comteh.com/products/show/c/11217/sc/KT08158.html",array(12,13));//ноуты
+//        $x=new cComteh("http://comteh.com/products/show/c/11217/sc/KT08158.html",array(614));//ноуты
+        $x=new cComteh("http://comteh.com/products/show/c/11217/sc/KT08158.html",array(12,13));//ноуты
         echo file_put_contents(dirname(__FILE__).'/_cComtehObject',serialize($x));
         echo '<br>заголовки загружены<br>';
     }
@@ -770,7 +770,8 @@ class magento{
 //        $this->session = $this->client->call('login', array('s', '123456'));
 //        exit;
 
-        $this->client = new SoapClient('http://localhost/api/?wsdl');/// todo модификация под другой магазин
+//        $this->client = new SoapClient('http://localhost/api/?wsdl');/// todo модификация под другой магазин
+        $this->client = new SoapClient('http://ifos.com.ua/api/?wsdl');
         $this->session = $this->client->login('s', '123456');
         
 //        file_put_contents(dirname(__FILE__).'/_magentoSessionObject',serialize($this->session));exit;
